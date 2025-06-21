@@ -70,7 +70,7 @@ const alea = (ext) => {
     }
 
     sticker = new Sticker(buffer, {
-      pack:"Mr b²" ,
+      pack:"Baraka-Md" ,
       author: nomAuteurMessage,
       type:
         arg.includes("crop") || arg.includes("c")
@@ -94,7 +94,7 @@ const alea = (ext) => {
     }
 
     sticker = new Sticker(buffer, {
-      pack:"Mr b²", // pack stick
+      pack:"Beltah-Md", // pack stick
       author:  nomAuteurMessage, // name of the author of the stick
       type:
         arg.includes("-r") || arg.includes("-c")
@@ -124,10 +124,10 @@ try{
 
 
 
-  
+
 });
 
-zokou({nomCom:"scrop",categorie: "Conversion", reaction: "👨🏿‍💻"},async(origineMessage,zk,commandeOptions)=>{
+zokou({nomCom:"scrop",categorie: "Conversion", reaction: "☘️"},async(origineMessage,zk,commandeOptions)=>{
    const {ms , msgRepondu,arg,repondre,nomAuteurMessage} = commandeOptions ;
 
   if(!msgRepondu) { repondre( 'make sure to mention the media' ) ; return } ;
@@ -151,7 +151,7 @@ mediamsg = msgRepondu.videoMessage
 
      let stickerMess = new Sticker(stick, {
             pack: pack,
-            
+
             type: StickerTypes.CROPPED,
             categories: ["🤩", "🎉"],
             id: "12345",
@@ -163,7 +163,7 @@ mediamsg = msgRepondu.videoMessage
 
 });
 
-zokou({nomCom:"take",categorie: "Conversion", reaction: "👨🏿‍💻"},async(origineMessage,zk,commandeOptions)=>{
+zokou({nomCom:"take",categorie: "Conversion", reaction: "💗"},async(origineMessage,zk,commandeOptions)=>{
    const {ms , msgRepondu,arg,repondre,nomAuteurMessage} = commandeOptions ;
 
   if(!msgRepondu) { repondre( 'make sure to mention the media' ) ; return } ;
@@ -187,7 +187,7 @@ mediamsg = msgRepondu.videoMessage
 
      let stickerMess = new Sticker(stick, {
             pack: pack,
-            
+
             type: StickerTypes.FULL,
             categories: ["🤩", "🎉"],
             id: "12345",
@@ -201,7 +201,7 @@ mediamsg = msgRepondu.videoMessage
 
 
 
-zokou({ nomCom: "write", categorie: "Conversion", reaction: "👨🏿‍💻" }, async (origineMessage, zk, commandeOptions) => {
+zokou({ nomCom: "write", categorie: "Conversion", reaction: "☘️" }, async (origineMessage, zk, commandeOptions) => {
   const { ms, msgRepondu, arg, repondre, nomAuteurMessage } = commandeOptions;
 
   if (!msgRepondu) {
@@ -214,10 +214,10 @@ zokou({ nomCom: "write", categorie: "Conversion", reaction: "👨🏿‍💻" },
     return;
   } ;
   text = arg.join(' ') ;
-  
+
   if(!text || text === null) {repondre('Make sure to insert text') ; return } ;
- 
-  
+
+
   const mediamsg = msgRepondu.imageMessage;
   const image = await zk.downloadAndSaveMediaMessage(mediamsg);
 
@@ -252,7 +252,7 @@ zokou({ nomCom: "write", categorie: "Conversion", reaction: "👨🏿‍💻" },
     // Create the sticker
     const stickerMess = new Sticker(meme, {
       pack: nomAuteurMessage,
-      author: 'Hacking-Md',
+      author: 'anyway-Md',
       type: StickerTypes.FULL,
       categories: ["🤩", "🎉"],
       id: "12345",
@@ -275,11 +275,11 @@ zokou({ nomCom: "write", categorie: "Conversion", reaction: "👨🏿‍💻" },
 
 
 
-zokou({nomCom:"photo",categorie: "Conversion", reaction: "👨🏿‍💻"},async(dest,zk,commandeOptions)=>{
+zokou({nomCom:"photo",categorie: "Conversion", reaction: "☘️"},async(dest,zk,commandeOptions)=>{
    const {ms , msgRepondu,arg,repondre,nomAuteurMessage} = commandeOptions ;
 
   if(!msgRepondu) { repondre( 'make sure to mention the media' ) ; return } ;
- 
+
    if (!msgRepondu.stickerMessage) {
       repondre('Um mention a non-animated sticker'); return
   } ;
@@ -288,10 +288,10 @@ zokou({nomCom:"photo",categorie: "Conversion", reaction: "👨🏿‍💻"},asyn
 
   const alea = (ext) => {
   return `${Math.floor(Math.random() * 10000)}${ext}`;};
-  
+
   let ran = await alea(".png");
 
-  
+
         exec(`ffmpeg -i ${mediaMess} ${ran}`, (err) => {
           fs.unlinkSync(mediaMess);
           if (err) {
@@ -314,31 +314,31 @@ zokou({nomCom:"photo",categorie: "Conversion", reaction: "👨🏿‍💻"},asyn
         });
 });
 
-zokou({ nomCom: "trt", categorie: "Conversion", reaction: "👨🏿‍💻" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "trt", categorie: "Conversion", reaction: "🤖" }, async (dest, zk, commandeOptions) => {
 
   const { msgRepondu, repondre , arg } = commandeOptions;
 
-  
+
    if(msgRepondu) {
      try {
-      
-     
+
+
 
        if(!arg || !arg[0]) { repondre('(eg : trt en)') ; return }
-   
+
 
          let texttraduit = await traduire(msgRepondu.conversation , {to : arg[0]}) ;
 
          repondre(texttraduit)
 
         } catch (error) {
-          
+
           repondre('Mention a texte Message') ;
-      
+
         }
 
    } else {
-     
+
      repondre('Mention a texte Message')
    }
 
@@ -347,7 +347,7 @@ zokou({ nomCom: "trt", categorie: "Conversion", reaction: "👨🏿‍💻" }, a
 }) ;
 
 
-zokou({ nomCom: "url2", categorie: "Conversion", reaction: "👨🏿‍💻" }, async (origineMessage, zk, commandeOptions) => {
+zokou({ nomCom: "tourl", categorie: "Conversion", reaction: "👨🏿‍💻" }, async (origineMessage, zk, commandeOptions) => {
   const { msgRepondu, repondre } = commandeOptions;
 
   if (!msgRepondu) {
